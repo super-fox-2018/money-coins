@@ -1,5 +1,48 @@
 function convertToCoin (money) {
-  // your implementation code here
+  
+  var result =[]
+  var coin=[]
+  var uang=money
+
+  for(x=0; x<100; x++) {
+
+    if (uang>=10000) {
+      result.push(10000)
+      uang -= 10000
+    } else if (uang>=5000) {
+      result.push(5000)
+      uang -= 5000
+    } else if (uang>=2000) {
+      result.push(2000)
+      uang -= 2000
+    } else if (uang>=1000) {
+      result.push(1000)
+      uang -= 1000
+    } else if (uang>=500) {
+      result.push(500)
+      uang -= 500
+    } else if (uang>=200) {
+      result.push(200)
+      uang -= 200
+    } else if (uang>=100) {
+      result.push(100)
+      uang -= 100
+    } else if (uang>=50) {
+      result.push(50)
+      uang -= 50
+    } else if (uang>=20) {
+      result.push(20)
+      uang -= 20
+    } else if (uang>=10) {
+      result.push(10)
+      uang -= 10
+    } else if (uang>=1) {
+      result.push(1)
+      uang -= 1
+    }
+  }
+
+  return result
 }
 
 // Drive code
