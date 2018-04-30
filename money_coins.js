@@ -1,5 +1,15 @@
 function convertToCoin (money) {
-  // your implementation code here
+  const coins = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+  const result = [];
+  let i = 0;
+  while(money !== 0) {
+    if (money - coins[i] >= 0) {
+      money -= coins[i];
+      result.push(coins[i]);
+    }
+    else i += 1;
+  }
+  return result;
 }
 
 // Drive code
