@@ -1,5 +1,16 @@
 function convertToCoin (money) {
   // your implementation code here
+  moneyCounter = [10000,5000,2000,1000,500,200,100,50,20,10,1]
+  output = []
+  for(i=0;i<moneyCounter.length;i++){
+    while(money>=moneyCounter[i]){
+      output.push(moneyCounter[i])
+      money-=moneyCounter[i]
+    }
+    if(money==0){
+      return output
+    }
+  }
 }
 
 // Drive code
