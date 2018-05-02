@@ -1,30 +1,26 @@
 function convertToCoin (money) {
-
   var coin = [1,10,20,50,100,200,500,1000, 2000, 5000, 10000];
   var arr = [];
 
-
-
-   do{
+  do{
     for(var i = 0; i < coin.length; i++){
-      if(money === coin[i]){
-      arr.push(coin[i]);
-      money -= coin[i];
+      if(money < coin[i] && money >= coin[i-1]){
+        if(money === coin[i]){
+          arr.push(coin[i]);
+          money -= coin[i];
+        }
+        else{
+          arr.push(coin[i-1]);
+          money -= coin[i-1];
+        }
       }
-
-      if((money - coin[i-1]) >= 0 && (money - coin[i]) < 0){
-      arr.push(coin[i-1]);
-      money -= coin[i-1];
+      else if(money >= coin[coin.length - 1]){
+        arr.push(coin[coin.length - 1]);
+        money -= coin[coin.length - 1];
+      }
     }
-
-    if((money - coin[coin.length -1]) >= 0){
-      arr.push(coin[coin.length - 1]);
-      money -= coin[coin.length - 1];
-    }
-    }
-   }while(money > 0)
-
-   return arr;
+  }while(money > 0)
+  return arr;
 
 }
 
