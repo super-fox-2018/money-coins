@@ -1,4 +1,17 @@
 function convertToCoin (money) {
+  let change = [5000,2000,1000,500,200,100,50,20,1];
+  let changeDenominations = [];
+
+  while(money > 0){
+    for(z =0; z < change.length; z++){
+      if(money >= change[z]){
+        changeDenominations.push(change[z]);
+        money -= change[z];
+        break;
+      }
+    }
+  }
+  return changeDenominations
   // your implementation code here
 }
 
